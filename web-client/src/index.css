@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #64748b;
+  --background-color: #ffffff;
+  --text-color: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 min-h-screen antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-primary-100;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-200 hover:shadow-md;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-all duration-200;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-primary-50 text-primary-600 font-medium;
+  }
+  
+  .chat-message {
+    @apply p-6 rounded-xl mb-4 max-w-3xl transition-all duration-200;
+  }
+  
+  .chat-message.user {
+    @apply bg-primary-50/50 ml-auto;
+  }
+  
+  .chat-message.assistant {
+    @apply bg-white border border-gray-100 shadow-sm hover:shadow-md;
+  }
+  
+  .markdown {
+    @apply prose prose-sm max-w-none prose-pre:bg-gray-800 prose-pre:text-gray-100;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-500 to-primary-600;
+  }
+
+  /* 搜索框样式 */
+  .search-input {
+    @apply w-full max-w-xl;
+  }
+
+  .search-input .ant-input-affix-wrapper {
+    @apply border-none bg-gray-50 hover:bg-gray-100 transition-colors duration-200;
+  }
+
+  .search-input .ant-input {
+    @apply bg-transparent;
+  }
+
+  .search-input .ant-input-search-button {
+    @apply border-none bg-transparent hover:bg-gray-200 text-gray-500;
+  }
+
+  /* 工具栏按钮样式 */
+  .tool-button {
+    @apply text-gray-500 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition-colors duration-200;
+  }
+
+  .tool-button.active {
+    @apply bg-primary-50 text-primary-600;
+  }
+}
+
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full hover:bg-gray-300 transition-colors duration-200;
+}
+
+/* Antd 组件样式覆盖 */
+.ant-select-selector {
+  @apply border-none shadow-none !important;
+}
+
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  @apply border-none !important;
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  @apply border-none shadow-none !important;
+}
+
+.ant-btn-primary {
+  @apply shadow-primary-100 !important;
+}
+
+.ant-input {
+  @apply transition-all duration-200 !important;
+}
+
+.ant-input:hover {
+  @apply border-primary-500 !important;
+}
+
+.ant-input:focus {
+  @apply border-primary-500 shadow-none !important;
+}
+
+.ant-input-textarea-show-count::after {
+  @apply text-gray-400 text-xs !important;
+}
+
+/* 工具提示样式 */
+.ant-tooltip {
+  @apply text-xs !important;
+}
+
+.ant-tooltip-inner {
+  @apply rounded-lg py-1 px-2 !important;
+}
+
+/* 下拉菜单样式 */
+.ant-dropdown-menu {
+  @apply rounded-lg border border-gray-100 shadow-lg !important;
+}
+
+.ant-dropdown-menu-item {
+  @apply text-sm !important;
+}
+
+/* 按钮动画 */
+.ant-btn {
+  @apply transition-all duration-200 !important;
+}
+
+.ant-btn:active {
+  @apply transform scale-95 !important;
+}
+
+/* 输入框动画 */
+.ant-input-affix-wrapper {
+  @apply transition-all duration-200 !important;
+}
+
+/* 消息气泡动画 */
+.chat-message {
+  animation: message-fade-in 0.3s ease-out;
+}
+
+@keyframes message-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,57 @@
+nohup: ignoring input
+2024/12/24 11:08:22 Connecting to database with DSN: host=cybermind-postgresql.ns-han88ija.svc user=postgres password=wkzhx7jn dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2024/12/24 11:08:22 Successfully connected to database
+2024/12/24 11:08:22 Running database migrations...
+2024/12/24 11:08:22 Database migrations completed
+2024/12/24 11:08:22 Found 3 existing models
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /api/v1/models            --> cybermind/model-service/internal/api/handler.(*ModelHandler).CreateModel-fm (3 handlers)
+[GIN-debug] GET    /api/v1/models            --> cybermind/model-service/internal/api/handler.(*ModelHandler).ListModels-fm (3 handlers)
+[GIN-debug] GET    /api/v1/models/:id        --> cybermind/model-service/internal/api/handler.(*ModelHandler).GetModel-fm (3 handlers)
+[GIN-debug] PUT    /api/v1/models/:id        --> cybermind/model-service/internal/api/handler.(*ModelHandler).UpdateModel-fm (3 handlers)
+[GIN-debug] DELETE /api/v1/models/:id        --> cybermind/model-service/internal/api/handler.(*ModelHandler).DeleteModel-fm (3 handlers)
+[GIN-debug] PUT    /api/v1/models/:id/status --> cybermind/model-service/internal/api/handler.(*ModelHandler).UpdateModelStatus-fm (3 handlers)
+2024/12/24 11:08:22 Server starting on :8081...
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on 0.0.0.0:8081
+2024/12/24 11:11:59 Listing all models
+2024/12/24 11:11:59 Found 3 models
+2024/12/24 11:11:59 Model 1: {ID:1 Name:GPT-4 Provider:OpenAI APIType:chat/completions BaseURL:https://api.fast-tunnel.one APIKey:sk-kUNLgEMdDBf1LHWLB7C90674A2A54b99BeF5D5E8D39fD04e ModelName:gpt-4 PointsPerRequest:10 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 55 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:11:59 Model 2: {ID:2 Name:Grok Beta Provider:Grok APIType:chat/completions BaseURL:https://api.x.ai/v1 APIKey:xai-DiAImxpXvlOoBVBFeatCTmZOqd2NipWCfSrUjLSduutOHIizemg7s2vc5NtrWhn5f22NsgIQYAkT9ko3 ModelName:grok-beta PointsPerRequest:8 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:11:59 Model 3: {ID:3 Name:Moonshot V1 Provider:Moonshot APIType:chat/completions BaseURL:https://api.moonshot.cn/v1 APIKey:sk-gYihm9BrL4aoQd28WETdSw9E7fU6v7OnIijd9yJMTigrI1e6 ModelName:moonshot-v1-8k PointsPerRequest:5 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 51 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+[GIN] 2024/12/24 - 11:11:59 | 200 |    1.260146ms |       127.0.0.1 | GET      "/api/v1/models"
+2024/12/24 11:12:10 Creating model: &{ID:0 Name:GPT-4-Turbo Provider:OpenAI APIType:chat/completions BaseURL:https://api.fast-tunnel.one APIKey:sk-kUNLgEMdDBf1LHWLB7C90674A2A54b99BeF5D5E8D39fD04e ModelName:gpt-4-turbo PointsPerRequest:12 Config:[123 34 116 101 109 112 101 114 97 116 117 114 101 34 58 48 46 56 44 34 109 97 120 95 116 111 107 101 110 115 34 58 52 48 48 48 44 34 116 111 112 95 112 34 58 49 125] Status:1 CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC}
+[GIN] 2024/12/24 - 11:12:10 | 200 |    4.598225ms |       127.0.0.1 | POST     "/api/v1/models"
+2024/12/24 11:12:18 Listing all models
+2024/12/24 11:12:18 Found 4 models
+2024/12/24 11:12:18 Model 1: {ID:1 Name:GPT-4 Provider:OpenAI APIType:chat/completions BaseURL:https://api.fast-tunnel.one APIKey:sk-kUNLgEMdDBf1LHWLB7C90674A2A54b99BeF5D5E8D39fD04e ModelName:gpt-4 PointsPerRequest:10 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 55 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:12:18 Model 2: {ID:2 Name:Grok Beta Provider:Grok APIType:chat/completions BaseURL:https://api.x.ai/v1 APIKey:xai-DiAImxpXvlOoBVBFeatCTmZOqd2NipWCfSrUjLSduutOHIizemg7s2vc5NtrWhn5f22NsgIQYAkT9ko3 ModelName:grok-beta PointsPerRequest:8 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:12:18 Model 3: {ID:3 Name:Moonshot V1 Provider:Moonshot APIType:chat/completions BaseURL:https://api.moonshot.cn/v1 APIKey:sk-gYihm9BrL4aoQd28WETdSw9E7fU6v7OnIijd9yJMTigrI1e6 ModelName:moonshot-v1-8k PointsPerRequest:5 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 51 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:12:18 Model 4: {ID:4 Name:GPT-4-Turbo Provider:OpenAI APIType:chat/completions BaseURL:https://api.fast-tunnel.one APIKey:sk-kUNLgEMdDBf1LHWLB7C90674A2A54b99BeF5D5E8D39fD04e ModelName:gpt-4-turbo PointsPerRequest:12 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 52 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 56 125] Status:1 CreatedAt:2024-12-24 11:12:10.698099 +0000 UTC UpdatedAt:2024-12-24 11:12:10.698099 +0000 UTC}
+[GIN] 2024/12/24 - 11:12:18 | 200 |     840.541µs |       127.0.0.1 | GET      "/api/v1/models"
+2024/12/24 11:12:27 Updating model status: ID=4, status=0
+[GIN] 2024/12/24 - 11:12:27 | 200 |    1.952086ms |       127.0.0.1 | PUT      "/api/v1/models/4/status"
+2024/12/24 11:12:35 Getting model with ID: 4
+[GIN] 2024/12/24 - 11:12:35 | 200 |    1.197446ms |       127.0.0.1 | GET      "/api/v1/models/4"
+2024/12/24 11:12:44 Deleting model with ID: 4
+[GIN] 2024/12/24 - 11:12:44 | 200 |    1.609685ms |       127.0.0.1 | DELETE   "/api/v1/models/4"
+2024/12/24 11:12:53 Listing all models
+2024/12/24 11:12:53 Found 3 models
+2024/12/24 11:12:53 Model 1: {ID:1 Name:GPT-4 Provider:OpenAI APIType:chat/completions BaseURL:https://api.fast-tunnel.one APIKey:sk-kUNLgEMdDBf1LHWLB7C90674A2A54b99BeF5D5E8D39fD04e ModelName:gpt-4 PointsPerRequest:10 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 55 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:12:53 Model 2: {ID:2 Name:Grok Beta Provider:Grok APIType:chat/completions BaseURL:https://api.x.ai/v1 APIKey:xai-DiAImxpXvlOoBVBFeatCTmZOqd2NipWCfSrUjLSduutOHIizemg7s2vc5NtrWhn5f22NsgIQYAkT9ko3 ModelName:grok-beta PointsPerRequest:8 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+2024/12/24 11:12:53 Model 3: {ID:3 Name:Moonshot V1 Provider:Moonshot APIType:chat/completions BaseURL:https://api.moonshot.cn/v1 APIKey:sk-gYihm9BrL4aoQd28WETdSw9E7fU6v7OnIijd9yJMTigrI1e6 ModelName:moonshot-v1-8k PointsPerRequest:5 Config:[123 34 116 111 112 95 112 34 58 32 49 44 32 34 109 97 120 95 116 111 107 101 110 115 34 58 32 50 48 48 48 44 32 34 116 101 109 112 101 114 97 116 117 114 101 34 58 32 48 46 51 125] Status:1 CreatedAt:2024-12-24 10:12:02.807826 +0000 UTC UpdatedAt:2024-12-24 10:12:02.807826 +0000 UTC}
+[GIN] 2024/12/24 - 11:12:53 | 200 |     957.678µs |       127.0.0.1 | GET      "/api/v1/models"
+[GIN] 2024/12/24 - 11:48:45 | 404 |         528ns |       127.0.0.1 | POST     "/api/v1/conversations"
+[GIN] 2024/12/24 - 11:48:54 | 404 |         489ns |       127.0.0.1 | GET      "/api/v1/conversations?page=1&size=10"
+[GIN] 2024/12/24 - 11:49:03 | 404 |         724ns |       127.0.0.1 | POST     "/api/v1/conversations/messages"
+[GIN] 2024/12/24 - 11:49:13 | 404 |         555ns |       127.0.0.1 | GET      "/api/v1/conversations/1/messages"
+[GIN] 2024/12/24 - 11:50:06 | 404 |         644ns |       127.0.0.1 | POST     "/api/v1/conversations"
+[GIN] 2024/12/24 - 11:50:59 | 404 |         679ns |       127.0.0.1 | POST     "/api/v1/conversations"
+[GIN] 2024/12/24 - 11:51:36 | 404 |         575ns |       127.0.0.1 | POST     "/api/v1/conversations"
+signal: killed

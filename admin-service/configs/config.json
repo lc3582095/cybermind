@@ -1,0 +1,19 @@
+{
+    "server": {
+        "port": 8081,
+        "mode": "debug"
+    },
+    "database": {
+        "host": "cybermind-postgresql.ns-han88ija.svc",
+        "port": 5432,
+        "user": "postgres",
+        "password": "wkzhx7jn",
+        "dbname": "postgres"
+    },
+    "redis": {
+        "host": "cybermind-redis-redis.ns-han88ija.svc",
+        "port": 6379,
+        "password": "mqjfcd8x",
+        "db": 0
+    }
+} 
