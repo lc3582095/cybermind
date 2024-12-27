@@ -2,23 +2,45 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
+
 	"cybermind/model-service/internal/api/handler"
+	"cybermind/model-service/internal/service"
 )
 
-// SetupRouter 配置路由
-func SetupRouter(r *gin.Engine, modelHandler *handler.ModelHandler) {
-	// API版本v1
+// SetupRouter 设置路由
+func SetupRouter(db *gorm.DB) *gin.Engine {
+	r := gin.Default()
+
+	// 创建服务
+	modelService := service.NewModelService(db)
+
+	// API v1
 	v1 := r.Group("/api/v1")
 	{
-		// 模型管理相关路由
-		models := v1.Group("/models")
-		{
-			models.POST("", modelHandler.CreateModel)           // 创建模型
-			models.GET("", modelHandler.ListModels)            // 获取模型列表
-			models.GET("/:id", modelHandler.GetModel)          // 获取单个模型
-			models.PUT("/:id", modelHandler.UpdateModel)       // 更新模型
-			models.DELETE("/:id", modelHandler.DeleteModel)    // 删除模型
-			models.PUT("/:id/status", modelHandler.UpdateModelStatus) // 更新模型状态
-		}
+		// 模型相关路由
+		modelHandler := handler.NewModelHandler(modelService)
+		v1.GET("/models", modelHandler.ListModels)
+		v1.POST("/models", modelHandler.CreateModel)
+		v1.PUT("/models/:id", modelHandler.UpdateModel)
+		v1.PUT("/models/:id/status", modelHandler.UpdateModelStatus)
+		v1.DELETE("/models/:id", modelHandler.DeleteModel)
+
+		// 供应商相关路由
+		providerHandler := handler.NewProviderHandler(db)
+		v1.GET("/providers", providerHandler.ListProviders)
+		v1.POST("/providers", providerHandler.CreateProvider)
+		v1.PUT("/providers/:id", providerHandler.UpdateProvider)
+		v1.PUT("/providers/:id/status", providerHandler.UpdateProviderStatus)
+		v1.DELETE("/providers/:id", providerHandler.DeleteProvider)
+
+		// API Key 池相关路由
+		apiKeyPoolHandler := handler.NewAPIKeyPoolHandler(db)
+		v1.GET("/api-keys", apiKeyPoolHandler.ListAPIKeyPools)
+		v1.POST("/api-keys", apiKeyPoolHandler.CreateAPIKeyPool)
+		v1.PUT("/api-keys/:id/status", apiKeyPoolHandler.UpdateAPIKeyPoolStatus)
+		v1.DELETE("/api-keys/:id", apiKeyPoolHandler.DeleteAPIKeyPool)
 	}
-} 
+
+	return r
+}
